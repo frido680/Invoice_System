@@ -13,6 +13,15 @@ A projekt futtatásához szükséges:
 - Swagger / Swashbuckle
 - Entity Framework Core
 - QuestPDF
+- 
+A csomagok  feltepelülnek autómatikusan futtatáskor viszont ha mégsem a lenti parancsokkal fel lehet telepíteni
+```bash
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Swashbuckle.AspNetCore
+dotnet add package QuestPDF
+```
 
 ## Adatbázis beállítása
 
