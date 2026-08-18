@@ -42,6 +42,32 @@ namespace Invoice_System.Controllers
 
             return CreatedAtAction(nameof(GetProducts), new { id = product.Id }, product);
         }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProduct(
+        int id,
+        [FromBody] UpdateProductDto dto)
+            {
+                var product = await _context.Products.FindAsync(id);
+
+                if (product == null)
+                {
+                    return NotFound();
+                }
+
+                product.Name = dto.Name;
+                product.Category = dto.Category;
+                product.UnitPrice = dto.UnitPrice;
+                product.Discount = dto.Discount;
+                product.IsHazardous = dto.IsHazardous;
+                product.IsFragile = dto.IsFragile;
+                product.StockQuantity = dto.StockQuantity;
+
+                product.IsDiscountEligible = dto.Discount > 0;
+
+                await _context.SaveChangesAsync();
+
+                return Ok(product);
+            }
 
     }
 }

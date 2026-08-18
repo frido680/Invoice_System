@@ -17,7 +17,6 @@
         public decimal UnitPrice { get; set; }
 
         public decimal Discount { get; set; }
-        public bool IsDiscountEligible { get; set; }
         public bool IsFragile { get; set; }
 
         public decimal LineTotal { get; set; }

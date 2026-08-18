@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public int CustomerId { get; set; }
         public DateTime OrderDate { get; set; }
-        public List<OrderItemResponseDto> Items { get; set; }
+        public List<OrderItemResponseDto> Items { get; set; } = new();
     }
 
     public class OrderItemResponseDto

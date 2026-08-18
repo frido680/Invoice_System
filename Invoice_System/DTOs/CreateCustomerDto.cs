@@ -1,12 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Runtime.CompilerServices;
 
 namespace Invoice_System.DTOs
 {
     public class CreateCustomerDto
     {
         [Required]
-        [MaxLength]
+        [MaxLength(500)]
         public string Name { get; set; }
         [Required]
         [MaxLength(350)]

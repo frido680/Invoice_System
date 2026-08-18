@@ -39,14 +39,15 @@ namespace Invoice_System.Services
             {
                 var product = productsById[item.productId];
 
+
                 var actualQuantity = Math.Min(
-                    item.Quantity,
-                    product.StockQuantity);
-                product.StockQuantity -= actualQuantity;
+                item.Quantity,
+                product.StockQuantity);
                 if (actualQuantity <= 0)
                 {
                     continue;
                 }
+                product.StockQuantity -= actualQuantity;
                 var orderItem = new OrderItem
                 {
                     ProductId = product.Id,
