@@ -9,6 +9,7 @@
         public int ProductId { get; set; }
         public Product Product { get; set; }
         public int Quantity { get; set; }
+        public decimal UnitPriceAtOrder { get; set; } //amennyibven változna az ár később attól még a rendelésben a rendelésnek az ára látszódjon
 
     }
 }

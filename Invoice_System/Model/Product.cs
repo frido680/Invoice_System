@@ -1,4 +1,6 @@
-﻿namespace Invoice_System.Model
+﻿using System.Diagnostics.Eventing.Reader;
+
+namespace Invoice_System.Model
 {
     public class Product
     {
@@ -6,10 +8,11 @@
         public string Name { get; set; }
         public string Category { get; set; }
         public decimal UnitPrice { get; set; }
-        public bool isHazardous { get; set; }
-        public decimal Discount { get; set; } //százalékban értendő
+        public bool IsHazardous { get; set; }
+        public decimal Discount { get; set; }
         public int StockQuantity { get; set; }
-        public bool isDiscountEligible => Discount > 0;
+        public bool IsFragile { get; set; }
+        public bool IsDiscountEligible { get; set; }
 
     }
 }

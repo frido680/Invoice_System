@@ -35,9 +35,10 @@ namespace Invoice_System.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UnitPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    isHazardous = table.Column<bool>(type: "bit", nullable: false),
+                    IsHazardous = table.Column<bool>(type: "bit", nullable: false),
                     Discount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    StockQuantity = table.Column<int>(type: "int", nullable: false)
+                    StockQuantity = table.Column<int>(type: "int", nullable: false),
+                    IsFragile = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

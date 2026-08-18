@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Invoice_System.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260818113212_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260818123435_AddOrderItemUnitPrice")]
+    partial class AddOrderItemUnitPrice
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -88,6 +88,9 @@ namespace Invoice_System.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("UnitPriceAtOder")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
@@ -112,6 +115,12 @@ namespace Invoice_System.Migrations
                     b.Property<decimal>("Discount")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<bool>("IsFragile")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsHazardous")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -121,9 +130,6 @@ namespace Invoice_System.Migrations
 
                     b.Property<decimal>("UnitPrice")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<bool>("isHazardous")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
